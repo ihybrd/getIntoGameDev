@@ -1,4 +1,4 @@
-import collections as _collections
+import _collections_abc as _collections
 import weakref as _weakref
 import sys
 
@@ -94,7 +94,8 @@ _cast_ptr = _cast_ptr3 if PY3 else _cast_ptr2
 
 
 # Load SDK
-_lib_names = ('libvulkan.so.1', 'vulkan-1.dll', 'libvulkan.dylib')
+_lib_names = ('libvulkan.so.1', 'vulkan-1.dll',
+              '/Users/yongbinhu/VulkanSDK/1.3.243.0/macOS/lib/libvulkan.dylib')
 for name in _lib_names:
     try:
         lib = ffi.dlopen(name)
@@ -7168,7 +7169,7 @@ def _wrap_vkAcquireNextImageKHR(fn):
 
         result = _callApi(fn, device,swapchain,timeout,semaphore,fence,pImageIndex)
         if result != VK_SUCCESS:
-            raise exception_codes[result]
+            pass # raise exception_codes[result]
 
         if custom_return:
             return pImageIndex
@@ -7185,7 +7186,7 @@ def _wrap_vkQueuePresentKHR(fn):
             ,):
         result = _callApi(fn, queue,pPresentInfo)
         if result != VK_SUCCESS:
-            raise exception_codes[result]
+            pass # raise exception_codes[result]
 
 
     return vkQueuePresentKHR
