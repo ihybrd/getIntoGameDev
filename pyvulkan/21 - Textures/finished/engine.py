@@ -595,8 +595,8 @@ class Engine:
 
         self.meshes.destroy()
         
-        for _,material in self.materials:
-            material.destroy()
+        for id in self.materials:
+            self.materials[id].destroy()
         vkDestroyDevice(
             device = self.device, pAllocator = None
         )

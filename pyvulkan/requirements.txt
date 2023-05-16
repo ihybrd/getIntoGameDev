@@ -1,0 +1,5 @@
+vulkan
+glfw
+numpy
+pyrr
+Pillow
