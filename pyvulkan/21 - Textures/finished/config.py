@@ -28,3 +28,5 @@ import pyrr
 TRIANGLE = 0
 SQUARE = 1
 STAR = 2
+import sys
+is_darwin = True if sys.platform == 'darwin' else False

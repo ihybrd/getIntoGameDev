@@ -24,3 +24,5 @@ import glfw
 import glfw.GLFW as GLFW_CONSTANTS
 import numpy as np
 import pyrr
+import sys
+is_darwin = True if sys.platform == 'darwin' else False

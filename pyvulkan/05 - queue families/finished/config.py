@@ -21,4 +21,6 @@ from vulkan import *
 """
 
 import glfw
-import glfw.GLFW as GLFW_CONSTANTS
+import glfw.GLFW as GLFW_CONSTANT
+import sys
+is_darwin = True if sys.platform == 'darwin' else False
